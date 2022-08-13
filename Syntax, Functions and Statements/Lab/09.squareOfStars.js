@@ -3,7 +3,7 @@ function squareOfStars(counting) {
         counting = 5
     }
     for (let i = 0; i < counting; i++) {
-        console.log('*'.repeat(counting));
+        console.log('* '.repeat(counting));
     }
 }
 //---Test---
