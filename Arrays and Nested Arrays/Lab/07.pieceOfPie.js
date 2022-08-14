@@ -1,7 +1,6 @@
 function pieceOfPie(array, start, end) {
     let res = array.slice(array.indexOf(start), array.indexOf(end) + 1);
-    console.log(res);
-
+    return res;
 }
 console.log('---Test 1---');
 pieceOfPie(['Pumpkin Pie',
