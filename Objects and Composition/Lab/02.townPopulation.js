@@ -1,16 +1,16 @@
 function townPopulation(data) {
     const towns = {}
     for (const line of data) {
-        const [name, population] = line.split(' <-> ');
-        if (!towns.hasOwnProperty(name)) {
-            towns[name] = Number(population);
-        } else {
-            towns[name] += Number(population);
+        let [name, population] = line.split(' <-> ');
+        population = Number(population);
+        if (towns.hasOwnProperty(name)) {
+            population += towns[name]
         }
+        towns[name] = population;
     }
 
-    for (const [key, value] of Object.entries(towns)) {
-        console.log(`${key} : ${value}`);
+    for (const [name, population] of Object.entries(towns)) {
+        console.log(`${name} : ${population}`);
     }
 }
 //'---Test 1---';
