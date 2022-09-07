@@ -3,11 +3,12 @@ function solve() {
 
     function onClick() {
 
-        let input = JSON.parse(document.querySelector("textarea").value);
+        const input = JSON.parse(document.querySelector("textarea").value);
 
-        let averageSalary = 0;
         let restaurants = {};
+
         for (const line of input) {
+            let averageSalary = 0;
             let [restaurantName, workers] = line.split(' - ');
 
             let workerInfo = workers.split(', ')
@@ -23,7 +24,7 @@ function solve() {
             }
             averageSalary /= workerInfo.length;
             restaurants[restaurantName].averageSalary = Number(averageSalary);
-            averageSalary = 0;
+
         }
         let sortedRestaurants = Object.entries(restaurants).sort(([keyA, valueA], [keyB, valueB]) => {
             return valueB.averageSalary - valueA.averageSalary;
@@ -38,9 +39,9 @@ function solve() {
         });
 
         let winnerSalary = Number(sortWinner[0][1]);
-
+        let firstresult = `Name: ${winnerName} Average Salary: ${winnerAvrgS} Best Salary: ${winnerSalary.toFixed(2)}`
         let resultWinner = document.querySelector('#bestRestaurant span');
-        resultWinner.textContent = `Name: ${winnerName} Average Salary: ${winnerAvrgS} Best Salary: ${winnerSalary.toFixed(2)}`;
+        resultWinner.textContent = firstresult;
 
 
         let res = '';
