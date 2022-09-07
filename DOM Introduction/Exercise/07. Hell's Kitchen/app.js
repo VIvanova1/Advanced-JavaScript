@@ -68,10 +68,29 @@ function solve() {
                     restaurants[restaurantName] = {};
                 }
                 restaurants[restaurantName][name] = salary;
+                averageSalary += Number(salary);
 
             }
-
-
+            averageSalary /= workerInfo.length;
+            restaurants[restaurantName].averageSalary = Number(averageSalary);
+            averageSalary = 0;
         }
+        let sortedRestaurants = Object.entries(restaurants).sort(([keyA, valueA], [keyB, valueB]) => {
+            return valueB.averageSalary - valueA.averageSalary;
+        });
+
+        let winner = sortedRestaurants[0]
+        let winnerName = winner.shift();
+        let winnerAvrgS = (winner[0].averageSalary).toFixed(2);
+
+        let sortWinner = Object.entries(winner[0]).sort(([keyA, valueA], [keyB, valueB]) => {
+            return valueB - valueA;
+        });
+
+        let winnerSalary = sortWinner[0][1];
+        console.log(winnerSalary);
+
+
     }
+
 }
