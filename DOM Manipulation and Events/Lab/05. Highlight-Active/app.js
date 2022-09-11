@@ -10,8 +10,6 @@ function focused() {
 
         el.addEventListener('blur', (e) => {
             divElementClass.className = ' ';
-        })
+        });
     }
-
-
 }
