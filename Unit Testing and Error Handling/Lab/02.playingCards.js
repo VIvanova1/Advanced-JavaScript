@@ -29,5 +29,5 @@ function playingCards(face, suit) {
 }
 console.log(playingCards('A', 'S').toString());
 console.log(playingCards('10', 'H').toString());
+console.log(playingCards('10', 'H') + " " + playingCards('A', 'S'));
 console.log(playingCards('1', 'C').toString());
-console.log(playingCards('1', 'C') + playingCards('A', 'S').toString());
